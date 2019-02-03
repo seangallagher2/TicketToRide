@@ -25,4 +25,4 @@ Game objects:
 	Player: Super class containing core player mechanics
 	HumanPlayer: prompts and player inputs for turns etc
 	AIPlayer: AI decisions etc
-	Turn: controls interation between players and game
+	Turn: controls interaction between players and game
