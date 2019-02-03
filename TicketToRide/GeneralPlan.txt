@@ -1,0 +1,28 @@
+This is a very rough plan for the core game mechanics and classes involved. Expect large changes
+
+Core Classes:
+City class will contain id, adjacent cities and shortestPath which will be a Path object deatailing the shortest path between two cities. Each city object will contain a shortestpath for each other city
+Connection class will represent the connection between two cities detailing connected cities, length, colour, tunnel and whether or not it has been taken or there's a second route between the cities
+Path object will be an object detailing a path between two cities. This will contain a list of id's of each connection involved., total length, end cities, involved cities
+With 37 cities on the board this will entail 1369 shortestPaths objects at game start. AI will create additional ones as the game goes on.
+Standard board game mechanics etc Deck, hand, draw, turns, players...
+
+Packages and contained classes:
+Board Objects:
+	City: adjacent cities, connections, shortestPath
+	Connection: id, connectedCities[], length, colour, type, double?, taken
+	Path: id, connectedCities[], length, numberofConnections, numberOfTrainsColour[]
+	Board: Contains board information
+Card Objects:
+	TrainCard: colour
+	TrainDeck: TrainCard, pull/push, TotalNumRemaining, numRemainingOfColour[]
+	PathCard: id, Path, points, longOrShort
+	PathDeck: PathCard, Pull/push, numRemaining
+Mechanics objects:
+	Tunnel: FlipCards
+Game objects:
+	Game: Core class which will run game
+	Player: Super class containing core player mechanics
+	HumanPlayer: prompts and player inputs for turns etc
+	AIPlayer: AI decisions etc
+	Turn: controls interation between players and game
