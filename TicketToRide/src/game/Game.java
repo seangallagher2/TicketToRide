@@ -6,7 +6,7 @@ import board.Board;
 
 public class Game {
 	Board board;
-	public Game() {
+	public Game() throws Exception {
 		board = new Board();
 		board.loadBoardFromData();
 	}

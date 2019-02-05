@@ -1,5 +1,6 @@
 package board;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.LoadData;
@@ -7,20 +8,21 @@ import io.LoadData;
 public class Board {
 	List<City> cities;
 	List<Connection> connections;
-	LoadData loadData;
+	LoadData loadData = new LoadData();
 	
 	
 	
 	
-	public void loadBoardFromData() {
+	public void loadBoardFromData() throws Exception {
 		cities = loadCities();
-		connections = loadConnections();
+		for(City city : cities) city.printCityData();
+		//connections = loadConnections();
 	}
 	
 	private List<Connection> loadConnections() { // load Connections from data
 		return loadData.loadConnections();
 	}
-	private List<City> loadCities() { // load cities from data
+	private List<City> loadCities() throws Exception { // load cities from data
 		return loadData.loadCities();
 	}
 	
