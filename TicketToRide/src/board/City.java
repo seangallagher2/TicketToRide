@@ -7,16 +7,17 @@ public class City {
 	int cityId;
 	String name;
 	int[] adjacentCities; // id's of cities adjacent to this one
-	List<Connection> connections; // connection objects for each adjacent cities
+	int[] connectionIds; // connection objects for each adjacent cities
 	Path[] shortestPaths; // This should be stored as data as it requires significant calculations and is the same every game
-	public City(int indexArg, String nameArg, int[] adjacentCitiesArg, List<Connection> connectionsArg) {
+	public City(int indexArg, String nameArg, int[] adjacentCitiesArg, int[] connectionIdsArg) {
 		cityId = indexArg;
 		name = nameArg;
 		adjacentCities = adjacentCitiesArg;
-		connections = connectionsArg;
+		connectionIds = connectionIdsArg;
 	}
 	public void printCityData() {
-		System.out.println("City ID: " + cityId + "  City name: " + name + "  adjacent Cities: " + Arrays.toString(adjacentCities));
+		System.out.println("City ID: " + cityId + "  City name: " + name + "  Adjacent Cities: " + Arrays.toString(adjacentCities) + "  Connections: " + Arrays.toString(connectionIds));
 		
 	}
+	
 }

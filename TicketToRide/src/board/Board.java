@@ -1,5 +1,6 @@
 package board;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +17,11 @@ public class Board {
 	public void loadBoardFromData() throws Exception {
 		cities = loadCities();
 		for(City city : cities) city.printCityData();
-		//connections = loadConnections();
+		connections = loadConnections();
+		for(Connection connection: connections) connection.printConnectionsData();
 	}
 	
-	private List<Connection> loadConnections() { // load Connections from data
+	private List<Connection> loadConnections() throws NumberFormatException, IOException { // load Connections from data
 		return loadData.loadConnections();
 	}
 	private List<City> loadCities() throws Exception { // load cities from data
